@@ -4,6 +4,7 @@ import {
   ListTodo,
   CalendarDays,
   Sparkles,
+  BarChart2,
   Clock,
   LogOut,
 } from "lucide-react";
@@ -115,6 +116,12 @@ export default function Navbar() {
             style={getLinkStyle(location.pathname === "/schedules")}
           >
             <CalendarDays size={16} /> Schedules
+          </Link>
+          <Link
+            to="/reports"
+            style={getLinkStyle(location.pathname === "/reports")}
+          >
+            <BarChart2 size={16} /> Reports
           </Link>
           <button onClick={handleLogout} style={logoutStyle}>
             <LogOut size={16} /> Logout

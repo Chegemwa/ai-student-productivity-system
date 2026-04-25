@@ -8,6 +8,7 @@ import SchedulePage from "./pages/SchedulePage";
 import AvailabilityPage from "./pages/AvailabilityPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import ReportsPage from "./pages/ReportsPage";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
                       path="/availability"
                       element={<AvailabilityPage />}
                     />
+                    <Route path="/reports" element={<ReportsPage />} />
                   </Routes>
                 </>
               </ProtectedRoute>

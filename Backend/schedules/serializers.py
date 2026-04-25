@@ -13,13 +13,12 @@ class StudyAvailabilitySerializer(serializers.ModelSerializer):
             "created_at",
         ]
         read_only_fields = ["created_at"]
-        # NOTE: 'user' is intentionally excluded — it is set from
-        # request.user in the view, never from user-supplied data.
 
 
 class ScheduleItemSerializer(serializers.ModelSerializer):
     task_title = serializers.CharField(source="task.title", read_only=True)
     task_due_date = serializers.DateTimeField(source="task.due_date", read_only=True)
+    task_course = serializers.CharField(source="task.course", read_only=True)
 
     class Meta:
         model = ScheduleItem
@@ -29,6 +28,7 @@ class ScheduleItemSerializer(serializers.ModelSerializer):
             "task",
             "task_title",
             "task_due_date",
+            "task_course",
             "study_date",
             "start_datetime",
             "end_datetime",
